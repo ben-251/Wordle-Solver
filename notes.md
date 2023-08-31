@@ -8,4 +8,4 @@ okay im gonna go to sleep and hopefully have a better idea of how i want to stru
 scratch that ive got a pretty banging structure now. what i want to work on is using the property 
 decorator to get rid of my getters. ill do that later though. first i need to git init!
 
-might remove the player class cuz i dont actually think i need it
+might remove the player class cuz i dont actually think i need it (oh wait no cuz input method)

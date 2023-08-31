@@ -1,6 +1,6 @@
 import random
 
-class GameDataHandler():
+class GameDataHandler:
 	__allowedGuesses: list
 	__possibleWords: list
 	__secretWord: str
@@ -20,6 +20,9 @@ class GameDataHandler():
 	def getSecretWord(self):
 		return self.__secretWord
 
+	def setSecretWord(self):
+		self.__secretWord = random.choice(self.__possibleWords)
+
 
 	def setWords(self):
 		allowedWordPath = 'data/allowed_guesses.txt'
@@ -32,9 +35,6 @@ class GameDataHandler():
 		with open(filepath, "r") as f:
 			words = [line.strip() for line in f]		
 		return words
-
-	def setSecretWord(self):
-		self.__secretWord = random.choice(self.__possibleWords)
 
 	def completeSetup(self):
 		print("Setup completed.")
