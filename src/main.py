@@ -1,4 +1,8 @@
 from GameManager import GameManager
+from Player import Player
 
 
-game_manager = GameManager()
+user = Player()
+game_manager = GameManager(user)
+
+game_manager.getGuess()

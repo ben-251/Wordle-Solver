@@ -1,7 +1,7 @@
 class Player:
-	guesses : list #of Guess objects
+	guesses : list # of Guess objects
 	def __init__(self):
 		pass
 
-	def guess(self,options):
-		pass
+	def makeGuess(self,options):
+		return "adieu"
