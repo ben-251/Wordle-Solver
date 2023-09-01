@@ -4,9 +4,10 @@ from HumanPlayer import Human
 
 # user = Player()
 # game_manager = GameManager(user)
-# game_manager.getGuess()
+# print(game_manager.getSecretWord())
+# game_manager.play()
 
 user2 = Human()
 game_manager = GameManager(user2)
 print(game_manager.getSecretWord())
-game_manager.getGuess()
+game_manager.play()

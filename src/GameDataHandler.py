@@ -1,4 +1,10 @@
 import random
+from enum import Enum, auto
+
+class GameStatus(Enum):
+	WON = auto()
+	LOST = auto()
+	IN_PLAY = auto()
 
 class GameDataHandler:
 	__allowedGuesses: list
@@ -39,4 +45,6 @@ class GameDataHandler:
 	def completeSetup(self):
 		print("Setup completed.")
 
+
+	
 	
