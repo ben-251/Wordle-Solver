@@ -1,6 +1,6 @@
 from GameDataHandler import GameDataHandler
 from Player import Player
-from Guess import Guess, Colour# idk if i need to immport the colour enum seperately
+from Guess import Guess, Colour
 
 class GameManager(GameDataHandler):
 	player: Player
@@ -15,20 +15,20 @@ class GameManager(GameDataHandler):
 		return self.player
 
 	def play():
-		pass
+		self.checkForWins()
 
 	def getGuess(self):
 		guess = Guess(self.player.makeGuess(self.getAllowedGuesses()))
 		guess.setWord(self.validateGuess(guess))
 
-		colour_pattern = self.computecolourPattern(guess)
-		guess.setcolourPattern(colour_pattern)
+		colour_pattern = self.computeColourPattern(guess)
+		guess.setColourPattern(colour_pattern)
 
-		print(guess.getcolourPattern(),
+		print(guess.getColourPattern(),
 		f"\nsecret: {self.getSecretWord()}",
 		f"\nguess: {guess.getWord()}")
 	
-	def computecolourPattern(self,guess):
+	def computeColourPattern(self,guess):
 		secret_word = self.getSecretWord()
 		colour_pattern = []
 
@@ -43,8 +43,16 @@ class GameManager(GameDataHandler):
 				
 		return colour_pattern
 
-		
-	
+	def checkForTermination(self):
+		guesses = self.getPlayer().getGuesses()
+
+		if all(colour == Colour.GREEN for colour in guesses[-1].colourPattern): #interesting idea!
+			return GameStatus.WON
+		elif len(guesses) == 6:
+			return GameStatus.LOST
+		else: 
+			return GameStatus.IN_PLAY
+
 	def validateGuess(self,guess):
 		if guess.getWord() not in self.getAllowedGuesses():
 			print ("invalid guess.")

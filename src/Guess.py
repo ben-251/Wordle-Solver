@@ -8,7 +8,7 @@ class Colour(Enum):
 
 class Guess:
 	word : str
-	colourPattern : list # of 5 colours
+	colourPattern : list 
 
 	def __init__(self,word):
 		self.word = word
@@ -20,10 +20,10 @@ class Guess:
 			colour_pattern.append(Colour.EMPTY)
 		self.colourPattern = colour_pattern
 
-	def getcolourPattern(self):
+	def getColourPattern(self):
 		return self.colourPattern
 	
-	def setcolourPattern(self,value):
+	def setColourPattern(self,value):
 		self.colourPattern = value
 
 	def getWord(self):
