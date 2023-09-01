@@ -39,7 +39,4 @@ class GameDataHandler:
 	def completeSetup(self):
 		print("Setup completed.")
 
-		print(f"secret word is: {self.__secretWord}",
-		f"{self.__allowedGuesses[3],self.__possibleWords[3]}"
-		)
 	
