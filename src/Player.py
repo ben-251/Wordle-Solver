@@ -1,9 +1,11 @@
 class Player:
+	botName: str
 	guesses : list
 	fileName: str
 
 	def __init__(self):
 		self.guesses = []
+		self.botName = "default bot"
 		self.fileName = "test.txt"
 
 	def getFileName(self):
