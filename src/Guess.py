@@ -1,10 +1,12 @@
 from enum import Enum, auto
+import colorama
+
 
 class Colour(Enum):
-	GREY = auto()
-	YELLOW = auto()
-	GREEN = auto()
-	EMPTY = auto()
+	GREY = colorama.Back.BLACK
+	YELLOW = colorama.Back.YELLOW
+	GREEN = colorama.Back.GREEN
+	EMPTY = colorama.Back.RESET
 
 class Guess:
 	word : str

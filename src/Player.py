@@ -1,7 +1,5 @@
 from GameDataHandler import GameDataHandler
 
-
-
 class Player:
 	botName: str
 	guesses : list
