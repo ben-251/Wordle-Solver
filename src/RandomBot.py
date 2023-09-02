@@ -90,9 +90,9 @@ class RandomBot(Player):
 				return False
 		if not self.yellowLetters == []:
 			if any(yellow_letter[0] not in current_guess for yellow_letter in self.yellowLetters):
-				return False
-		if any(letter in self.greyLetters[0] for letter in current_guess):
-				return False		
+				return False	
+		if any(letter[0] in current_guess for letter in self.greyLetters):
+			return False		
 		for green_letter in self.greenLetters:
 			if green_letter[0] != current_guess[green_letter[1]]:
 				return False	

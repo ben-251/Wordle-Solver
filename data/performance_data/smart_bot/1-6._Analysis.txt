@@ -1,0 +1,3 @@
+Name: Smart Bot. 1:6
+Average Score: 4.45
+Win Rate: 80.0%

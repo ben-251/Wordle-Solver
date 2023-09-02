@@ -1,0 +1,3 @@
+Name: Random Bot. 0:6
+Average Score: 4.68
+Win Rate: 88.0%
