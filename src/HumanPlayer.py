@@ -5,5 +5,5 @@ class Human(Player):
 		super().__init__()
 		self.fileName = "human.txt"
 
-	def makeGuess(self,options):
+	def makeGuess(self):
 		return input("Enter a 5-letter word: ")

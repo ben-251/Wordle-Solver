@@ -40,8 +40,7 @@ class GameManager(GameDataHandler):
 		return
 		
 	def receiveGuess(self):
-		allowed_guesses = self.getAllowedGuesses()
-		guessed_word = self.player.makeGuess(allowed_guesses)
+		guessed_word = self.player.makeGuess()
 		guess = Guess(guessed_word)
 
 		if not self.isValid(guess):

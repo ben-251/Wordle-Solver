@@ -28,15 +28,15 @@ class SmartBot(Player):
 	def generateFileName(self):
 		return f"smart_bot/{str(len(self.randomGuesses))}-{str(len(self.thinkingGuesses))}.txt"
 
-	def makeGuess(self,options):
+	def makeGuess(self):
 		current_guess_number = len(self.guesses) + 1
 
 		if current_guess_number in self.randomGuesses:
-			return self.makeRandomGuess(options)
-		else:
-			return self.makeEducatedGuess(options)
+			return self.makeRandomGuess()
+		return self.makeEducatedGuess()
 
-	def makeRandomGuess(self,options):
+	def makeRandomGuess(self):
+		options = self.allowedGuesses
 		elapsed_guesses = [guess.word for guess in self.guesses]
 		guess = random.choice(options)
 		while guess in elapsed_guesses:
@@ -47,7 +47,8 @@ class SmartBot(Player):
 				guess = random.choice(options)
 		return guess
 
-	def makeEducatedGuess(self,options):
+	def makeEducatedGuess(self):
+		options = self.possibleWords
 		true_options = self.findAvailableWords(options)
 		return random.choice(true_options)
 
