@@ -1,7 +1,13 @@
 class Player:
 	guesses : list
+	fileName: str
+
 	def __init__(self):
 		self.guesses = []
+		self.fileName = "test.txt"
+
+	def getFileName(self):
+		return self.fileName
 
 	def makeGuess(self,options):
 		return "adieu"

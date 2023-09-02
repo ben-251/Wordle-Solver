@@ -1,13 +1,10 @@
-from GameManager import GameManager
+from BotAnalyser import BotAnalyser
 from Player import Player
 from HumanPlayer import Human
 
-# user = Player()
-# game_manager = GameManager(user)
-# print(game_manager.getSecretWord())
-# game_manager.play()
+def main():
+	bot_analyser = BotAnalyser(Human)
+	bot_analyser.runAnalysis()
 
-user2 = Human()
-game_manager = GameManager(user2)
-print(game_manager.getSecretWord())
-game_manager.play()
+if __name__ == "__main__":
+	main()

@@ -1,4 +1,4 @@
 from Player import Player
 
-class RandomBot(Player):
+class SmartBot(Player):
 	pass

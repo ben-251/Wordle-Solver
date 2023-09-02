@@ -45,6 +45,17 @@ class GameDataHandler:
 	def completeSetup(self):
 		print("Setup completed.")
 
+	def updateScores(self,player,game_status):
+		file_name = self.createScoreFilePath(self.player.getFileName())
+		with open(file_name,"a") as f:
+			if game_status == GameStatus.WON:
+				f.write(str(len(player.getGuesses()))+"\n")
+			else:
+				f.write("0\n") #ehhh maybe. could make a constant variable ig
+
+	def createScoreFilePath(self,fileName):
+		return f"data/performance_data/{fileName}"
+
 
 	
 	

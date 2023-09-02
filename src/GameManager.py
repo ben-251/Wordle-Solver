@@ -36,6 +36,7 @@ class GameManager(GameDataHandler):
 			self.updateGameStatus()
 			game_status = self.getGameStatus()	
 		self.GameDisplayer.display_result(game_status)
+		self.updateScores(self.player,game_status)
 		return
 		
 	def receiveGuess(self):
