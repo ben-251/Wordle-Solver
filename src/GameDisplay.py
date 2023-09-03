@@ -14,19 +14,33 @@ class GameDisplayer:
 		if self.player.botName == "Human":
 			self.displayHumanFeedback()
 		else:
-			self.displayHumanFeedback()
+			self.displayBotFeedback()
 	
-	def displayBotFeedback(self):
-		for word in self.player.getGuesses():
-			for i in range(5):
-				try:
+	def displayBotFeedbackni(self):
+		words = self.player.getGuesses()
+		for i in range(5):
+			try:
+				word = words[i]
+				for letter,colour in zip(word.word,word.colourPattern):
 					colour = word.colourPattern[i]
 					print(f"{colour.value}_{colorama.Back.RESET}",end = "")
-				except IndexError:
-					print(f"{colorama.Back.BLACK}______{colorama.Back.RESET}",end = "")
+			except IndexError:
+				print(f"{colorama.Back.BLACK}_____{colorama.Back.RESET}",end = "")
 			print("")	
 		print("")
-
+		
+	def displayBotFeedback(self):
+		words = self.player.getGuesses()
+		for i in range (6):
+			try:
+				word = words[i]
+				for letter,colour in zip(word.word,word.colourPattern):
+					print(f"{colour.value}{letter.upper()}{colorama.Back.RESET}",end = "")
+			except IndexError:
+				print(f"{colorama.Back.BLACK}_____{colorama.Back.RESET}",end = "")
+			print("")
+		print("")
+	
 	def displayHumanFeedback(self):
 		for word in self.player.getGuesses():
 			for letter,colour in zip(word.word,word.colourPattern):
