@@ -1,7 +1,7 @@
 from GameDataHandler import GameDataHandler
 
 class Player:
-	botName: str
+	playerName: str
 	guesses : list
 	fileName: str
 	allowedGuesses: list
@@ -10,7 +10,7 @@ class Player:
 	def __init__(self):
 		self.data_handler = GameDataHandler()
 		self.guesses = []
-		self.botName = "default bot"
+		self.playerName = "default player"
 		self.fileName = "test.txt"
 		self.allowedGuesses = self.data_handler.getAllowedGuesses()
 		self.possibleWords = self.data_handler.getPossibleWords()

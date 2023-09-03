@@ -40,10 +40,10 @@ class BotAnalyser:
 		self.win_rate = self.findWinRate(scores)
 	
 	def storeStatistics(self):
-		self.game_manager.storeStats(f"Name: {self.user.botName}\nAverage Score: {self.average_score}\nWin Rate: {self.win_rate}%")
+		self.game_manager.storeStats(f"Name: {self.user.playerName}\nAverage Score: {self.average_score}\nWin Rate: {self.win_rate}%")
 
 	def displayStatistics(self):
-		print(f"Name: {self.user.botName}")
+		print(f"Name: {self.user.playerName}")
 		print(f"Average Score: {self.average_score}")
 		print(f"Win Rate: {self.win_rate}%")
 

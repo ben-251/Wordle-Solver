@@ -1,0 +1,3 @@
+Name: Human
+Average Score: 4.0
+Win Rate: 83.33%

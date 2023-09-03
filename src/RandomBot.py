@@ -3,24 +3,34 @@ from Guess import Colour
 import random
 
 class RandomBot(Bot):
-	randomGuesses : list
-	thinkingGuesses : list
-	yellowLetters : list
-	greenLetters : list
-	greyLetters : list
+	thinking_ratio: tuple
 
 	def __init__(self,thinking_ratio = None):
 		super().__init__()
-		self.botName = f"Random Bot. {len(self.randomGuesses)}:{len(self.thinkingGuesses)}"
+		self.setThinkingSplit(thinking_ratio)
+		self.playerName = f"Random Bot. {self.thinking_ratio[0]}:{self.thinking_ratio[1]}"
 		self.fileName = self.generateFileName()
 
+	def setThinkingSplit(self,ratio):
+		if ratio is None:
+			ratio = "3:3"
+
+		parts = ratio.split(':')
+		numerator = int(parts[0])
+		denominator = int(parts[1])
+
+		self.thinking_ratio = (numerator,denominator)
+
 	def generateFileName(self):
-		return f"random_bot/{str(len(self.randomGuesses))}-{str(len(self.thinkingGuesses))}.txt"
+		randomGuesses = self.thinking_ratio[0]
+		thinkingGuesses = self.thinking_ratio[1]
+		return f"smart_bot/{str(randomGuesses)}-{str(thinkingGuesses)}.txt"
 
 	def makeGuess(self):
+		randomGuesses = [num + 1 for num in range(self.thinking_ratio[0])]
 		current_guess_number = len(self.guesses) + 1
 
-		if current_guess_number in self.randomGuesses:
+		if current_guess_number in randomGuesses:
 			return self.makeRandomGuess()
 		else:
 			return self.makeEducatedGuess()

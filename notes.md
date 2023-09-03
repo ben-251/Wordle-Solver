@@ -54,3 +54,6 @@ aaactually maybe ill just make
  def getletters(color) where color is like Colour.GREEN or sometin
 
  also i went from yellow letters, yellow position to yellow lettters[0] and [1], but this is also not good, and i will switch to classes evnetually
+
+
+ also i wanna fix the "thinking_ratio" implementation so it only applies to the specific bots that need it

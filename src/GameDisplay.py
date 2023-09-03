@@ -11,7 +11,7 @@ class GameDisplayer:
 	def displayFeedback(self):
 		guess = self.player.getGuesses()[-1]
 
-		if self.player.botName == "Human":
+		if self.player.playerName == "Human":
 			self.displayHumanFeedback()
 		else:
 			self.displayBotFeedback()
