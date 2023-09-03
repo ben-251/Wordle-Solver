@@ -5,13 +5,14 @@ from RandomBot import RandomBot
 from SmartBot import SmartBot
 
 def main():
-	bot_analyser2 = BotAnalyser(RandomBot,thinking_ratio="2:4")
-	bot_analyser2.runGames(cycleCount=1)
-	bot_analyser2.Analyse()
+	runAll()
 
-	bot_analyser3 = BotAnalyser(Human)
-	bot_analyser3.runGames(cycleCount=1)
-	bot_analyser3.Analyse()
+
+def runAll():
+	for ratio in ["0:6","1:5","2:4","3:3","4:2","5:1"]:
+		bot_analyser = BotAnalyser(SmartBot,thinking_ratio=ratio)
+		bot_analyser.runGames(cycleCount=20)
+		bot_analyser.Analyse()
 
 if __name__ == "__main__":
 	main()

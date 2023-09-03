@@ -56,4 +56,7 @@ aaactually maybe ill just make
  also i went from yellow letters, yellow position to yellow lettters[0] and [1], but this is also not good, and i will switch to classes evnetually
 
 
+
+oooooh instead of geetting a ist of valid options adnd then choosing randomly, ill just randomly sort that list and then go through the algroighm
+
  also i wanna fix the "thinking_ratio" implementation so it only applies to the specific bots that need it

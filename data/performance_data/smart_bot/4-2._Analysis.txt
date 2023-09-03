@@ -1,3 +1,3 @@
-Name: Random Bot. 4:2
-Average Score: 5.2
-Win Rate: 96.38%
+Name: Smart Bot. 4:2
+Average Score: 5.28
+Win Rate: 92.86%
